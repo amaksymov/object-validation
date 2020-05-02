@@ -1,0 +1,10 @@
+language: python
+python:
+ - "3.8"
+install:
+ - pip install --upgrade pip
+ - pip install poetry
+ - poetry install -v
+script:
+ - pytest
+ - mypy object_validation --ignore-missing-imports --disallow-untyped-defs
